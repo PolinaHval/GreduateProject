@@ -11,13 +11,5 @@ public class LoginSteps {
         this.driver = driver;
     }
 
-    @Step
-    public void login (String userName,String password){
-        LoginPage loginPage = new LoginPage(driver,true );
-        loginPage.getUserName().sendKeys(userName);
-        loginPage.getPassword().sendKeys(password);
-        loginPage.getButton().click();
-        
 
-    }
 }
