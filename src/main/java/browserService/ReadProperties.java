@@ -41,5 +41,9 @@ public class ReadProperties {
         return properties.getProperty("password");
     }
 
+
+    public String getName(){
+    return properties.getProperty("name");
     }
+}
 

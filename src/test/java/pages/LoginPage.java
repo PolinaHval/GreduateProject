@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
 
-    private String ENDPOINT = "/auth/login";
+    private static String ENDPOINT = "/auth/login";
 
     private By userName = By.id("name");
     private By userPassword = By.id("password");
@@ -21,25 +21,25 @@ public class LoginPage extends BasePage {
 
     @Override
     protected void openPage() {
-        driver.get(BASE_URL);
+        driver.get(BASE_URL+ENDPOINT);
     }
 
     @Override
     public boolean isPageOpened() {
-        return driver.findElement(By.id("button_primary")).isDisplayed();
+        return waits.isElementDisplayed(By.id("button_primary"));
     }
 
 
     public WebElement getUserName(){
-        return driver.findElement(userName);
+        return waits.getElement(userName);
     }
 
     public WebElement getPassword(){
-        return driver.findElement(userPassword);
+        return waits.getElement(userPassword);
     }
 
     public WebElement getButton(){
-        return driver.findElement(Button);
+        return waits.getElement(Button);
     }
     public String getErrorMessage(){
         return driver.findElement(errorMessage).getText();
